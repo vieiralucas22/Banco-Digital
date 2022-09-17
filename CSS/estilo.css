@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #111927;
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(7, 93%, 34%) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 82% 65%, hsl(218, 39%, 11%) 0, transparent 55%);
+}
+
+.container2 {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-menu {
+  width: 200px;
+  height: 200px;
+  box-shadow: 15px 15px 30px black;
+  margin: 15px;
+  font-size: 25px;
+  color: azure;
+}
