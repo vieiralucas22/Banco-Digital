@@ -141,6 +141,18 @@ function taxa_transferencia(limite_transferencia, tipo, indice) {
     }
   }
 }
+function taxa_extrato(limite_extrato, tipo, indice) {
+  if (!(limite_extrato > 0)) {
+    array_contas[indice].sacar(0.5);
+  } else {
+    limite_extrato--;
+    if (tipo == 2) {
+      limExtrato_basico = limite_extrato;
+    } else if (tipo == 3) {
+      limExtrato_estudante = limite_extrato;
+    }
+  }
+}
 
 function realizar_transferencias() {
   let Flag_envia = false;
@@ -201,6 +213,21 @@ function mostrar_extrato() {
       alert(`${array_contas[i].nome_user} extrato! 
 
         ${array_contas[i].operacoes}`);
+
+      if (array_contas[i].tipo_conta == "2") {
+        taxa_extrato(limExtrato_basico, 2, i);
+      } else if (array_contas[i].tipo_conta == "3") {
+        taxa_extrato(limExtrato_estudante, 3, i);
+      }
     }
   }
+}
+function resetar_Limites() {
+  limiteBasico = 1000;
+  limiteEstudante = 300;
+  limExtrato_basico = 3;
+  limTransferencia_basico = 3;
+  limExtrato_estudante = 1;
+  limTransferencia_estudante = 1;
+  alert(`O mês virou todos seus limites foram resetados!`);
 }
